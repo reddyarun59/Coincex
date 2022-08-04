@@ -10,17 +10,15 @@ const initialState = {
     message:""
 }
 
-const HistoricalChart = (id,days) => `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}`;
+const ChartApi = (id,days) => `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}`;
 
 export const fetchCoinTime= createAsyncThunk("coinTime/fetchCoinTime", async( userData,thunkAPI)=>{
     
     try {
         const {id, days}=userData
-        const { data } = await axios.get(HistoricalChart(id,days));
+        const { data } = await axios.get(ChartApi(id,days));
         localStorage.setItem('coinTime',JSON.stringify(data))
         return data
-
-    // return await chartService.fetchCoinTime(userData)
     } catch (error) {
         const message=(error.response&&error.response.data&&error.response.data.message)||error.message||error.toString()
         return thunkAPI.rejectWithValue(message)

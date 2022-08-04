@@ -14,13 +14,10 @@ const ChartComponent = () => {
   const handleDays = (e)=>{
     setDays(e.target.value)
   }
-  //console.log(coin, days)
 
 
   useEffect(() => {
     dispatch(fetchCoinTime({id,days}));
-    //console.log(coins)
-
     dispatch(reset())
   }, [id,dispatch, reset, days]);
   return (
