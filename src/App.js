@@ -1,3 +1,4 @@
+import ChartComponent from "./components/ChartComponent";
 import Coins from "./components/Coins";
 import Navbar from "./components/Navbar";
 
@@ -6,6 +7,7 @@ function App() {
     <div>
       <Navbar/>
       <Coins/>
+      <ChartComponent/>
     </div>
   );
 }
