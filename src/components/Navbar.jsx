@@ -20,8 +20,11 @@ const Navbar = () => {
     dispatch(fetchCoins(currency));
     console.log(coins)
 
-    dispatch(reset())
-  }, [currency, dispatch, reset]);
+    //dispatch(reset())
+    return ()=>{
+      dispatch(reset())
+    }
+  }, [ dispatch, currency]);
 
 
   return (

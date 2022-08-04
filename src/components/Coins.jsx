@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux';
 
 const Coins = () => {
-  const [loading, setLoading]=useState(true)
   const { coins, isLoading, isError, isSuccess, message }= useSelector((state)=>state.coins)
-  if(coins){
-    setLoading(false)
+  if(isLoading||!coins){
+    return <h1>Hello</h1>
   }
   return (
     <div className="bg-white">
       <div className="py-4 px-4">
         <h2 className="text-xl font-bold">Cryptocurrency by market cap</h2>
       </div>
-      {loading?<h1>Loading...</h1>:<div className="overflow-y-auto h-screen no-scrollbar">
+      <div className="overflow-y-auto h-screen no-scrollbar">
         {coins.map((coin)=>(
           <div key={coin.id} className="flex py-4 border-b-4 justify-between px-4">
             <div>
@@ -26,8 +25,7 @@ const Coins = () => {
         <h5 className="text-lg">{coin.price_change_percentage_24h}</h5>
         </div>
         ))}
-      </div>}
-      
+      </div>
 
     </div>
   )
