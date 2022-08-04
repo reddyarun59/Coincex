@@ -5,10 +5,10 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="h-screen">
+    <div className="flex flex-col">
       <Header/>
       <div className="bg-white">
-        <div className="flex bg-slate-500 mx-36 my-8">
+        <div className="flex bg-slate-500">
           <Navbar/>
           <Coins/>
           <ChartComponent/>
