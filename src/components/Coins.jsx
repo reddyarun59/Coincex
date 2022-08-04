@@ -4,9 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const Coins = () => {
   const { coins, isLoading, isError, isSuccess, message }= useSelector((state)=>state.coins)
-  if(isLoading||!coins){
-    return <h1>Hello</h1>
-  }else{
+  
 
   
   return (
@@ -31,6 +29,6 @@ const Coins = () => {
 
     </div>
   )
-}}
+}
 
 export default Coins

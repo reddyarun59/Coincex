@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import coinService from "./coinService";
 
-const coins=JSON.parse(localStorage.getItem("currency"))
+//const coins=JSON.parse(localStorage.getItem("currency"))
 const initialState = {
-    coins:coins?coins:null,
+    coins:JSON.parse(localStorage.getItem("currency")),
     isLoading: false,
     isError: false,
     isSuccess: false,
