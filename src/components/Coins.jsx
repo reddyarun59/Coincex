@@ -1,9 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux';
 
 const Coins = () => {
   const { coins, isLoading, isError, isSuccess, message }= useSelector((state)=>state.coins)
+
+  const [loading, setLoading] = useState(true)
+  useEffect(() =>{
+    setLoading(prevState=>!prevState)
+  }, [coins, isLoading])
   
 
   
