@@ -6,6 +6,11 @@ const ChartComponent = () => {
 
   const dispatch=useDispatch()
   const { coins, isLoading, isError, isSuccess, message }= useSelector((state)=>state.coins)
+
+  const [loading, setLoading] = useState(true)
+  useEffect(() =>{
+    setLoading(prevState=>!prevState)
+  }, [coins, isLoading])
   const [id, setId]=useState("bitcoin")
   const [days, setDays]=useState("30")
   const handleChange = (e) => {
@@ -23,14 +28,15 @@ const ChartComponent = () => {
   return (
     <div>
         <button>
-          <select 
+          {loading?<h1>Loading</h1>:(<select 
             name="currency"
             onChange={handleChange}
             value={id}>
             {coins.map((coin)=>(
               <option key={coin.id} value={coin.id}>{coin.name}</option>
             ))}
-          </select>
+          </select>)}
+          
           <button>
             <select name="days" onChange={handleDays} value={days}>
               <option value="1">1</option>
