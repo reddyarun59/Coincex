@@ -12,7 +12,7 @@ function App() {
         <div className="flex flex-col">
           <Header/>
           <div className="bg-white">
-            <div className="flex bg-slate-500">
+            <div className="flex flex-col">
               <Navbar/>
               <Coins/>
               <ChartComponent/>

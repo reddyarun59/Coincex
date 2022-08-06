@@ -1,18 +1,41 @@
 import React, { useEffect, useState } from 'react'
+import { Line } from 'react-chartjs-2'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchCoinTime, reset } from '../features/charts/chartSlice'
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const ChartComponent = () => {
 
   const dispatch=useDispatch()
   const { coins, isLoading, isError, isSuccess, message }= useSelector((state)=>state.coins)
+  const {coinTime} =useSelector(state=>state.coinTime)
+  //const [coinChartData, setCoinChartData]=useState(coinTime)
+  console.log(coinTime)
 
   const [loading, setLoading] = useState(true)
   useEffect(() =>{
     setLoading(prevState=>!prevState)
   }, [coins, isLoading])
   const [id, setId]=useState("bitcoin")
-  const [days, setDays]=useState("30")
+  const [days, setDays]=useState(30)
   const handleChange = (e) => {
     setId(e.target.value)
   }
@@ -23,9 +46,21 @@ const ChartComponent = () => {
 
   useEffect(() => {
     dispatch(fetchCoinTime({id,days}));
-    //console.log()
-    dispatch(reset())
-  }, [id,dispatch, reset, days]);
+  return ()=>{
+      dispatch(reset())
+    }
+  }, [id,dispatch, days]);
+// let daysss
+//   // function switchStatement(data){
+//     switch(){
+//       case 365:
+//         daysss=["Jan", "Feb"]
+//         break;
+//       default:
+//         daysss=["jan", "Mar", "Apr", "May", "Jun", "Jul"]
+//     }
+//   // }
+
   return (
     <div>
         <button>
@@ -45,12 +80,72 @@ const ChartComponent = () => {
               <option value="30">30</option>
             </select>
           </button> */}
-          <button value="1" onClick={handleDays}>1D</button>
-          <button value="7" onClick={handleDays}>1W</button>
-          <button value="30" onClick={handleDays}>1M</button>
-          <button value="90" onClick={handleDays}>3M</button>
-          <button value="365" onClick={handleDays}>1Y</button>
+          <div className="flex justify-between">
+
+            <button value={1} onClick={handleDays}>1D</button>
+            <button value={7} onClick={handleDays}>1W</button>
+            <button value={30} onClick={handleDays}>1M</button>
+            <button value={90} onClick={handleDays}>3M</button>
+            <button value={365} onClick={handleDays}>1Y</button>
+          </div>
         </button>
+        <Line
+              data={{
+                labels: coinTime.map((coin) => {
+                  let date = new Date(coin[0]);
+                  let time =
+                    date.getHours() > 12
+                      ? `${date.getHours() - 12}:${date.getMinutes()} PM`
+                      : `${date.getHours()}:${date.getMinutes()} AM`;
+                  return days === 1 ? time :date.getUTCFullYear();
+                }),
+
+                datasets: [
+                  {
+                    data: coinTime.map((coin) => coin[1]),
+                    pointRadius: 0,
+                    label: `${id.toUpperCase()}
+                    Market Price`,
+                    borderColor: "#328213",
+                  },
+                ],
+              }}
+              options={{
+                plugins: {
+                  legend: {
+                    display: false,
+                    labels: {
+                      usePointStyle: true,
+                      pointStyle: "circle"
+                      // boxWidth: 5
+                    }
+                  },
+                  title: {
+                    display: true,
+                    text: `${id.toUpperCase()}`,
+                    padding: {
+                      bottom: 30
+                    },
+                    weight: "bold",
+                    color: "#00325c",
+                    font: {
+                      size: 13
+                    },
+                    align: "end"
+                  },
+                  
+                  datalabels: {
+                    display: false,
+                    labels: {
+                      title: {
+                        font: {
+                          weight: "bold",
+                          size:18
+                        }
+                      },
+                    },}
+                }}}
+            />
         
     </div>
   )
