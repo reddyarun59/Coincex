@@ -17,7 +17,8 @@ export const fetchCoinTime= createAsyncThunk("coinTime/fetchCoinTime", async( us
     try {
         const {id, days}=userData
         const { data } = await axios.get(ChartApi(id,days));
-        localStorage.setItem('coinTime',JSON.stringify(data))
+        console.log(data.prices)
+        localStorage.setItem('coinTime',JSON.stringify(data.prices))
         return data
     } catch (error) {
         const message=(error.response&&error.response.data&&error.response.data.message)||error.message||error.toString()

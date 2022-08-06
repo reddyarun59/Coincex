@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
 import ChartComponent from "./components/ChartComponent";
 import Coins from "./components/Coins";
+import Exchange from "./components/Exchange";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
+import Portfolio from "./components/Portfolio";
 
 function App() {
   const { coins, isLoading, isError, isSuccess, message }= useSelector((state)=>state.coins)
@@ -14,6 +16,8 @@ function App() {
               <Navbar/>
               <Coins/>
               <ChartComponent/>
+              <Portfolio/>
+              <Exchange/>
     
             </div>
     

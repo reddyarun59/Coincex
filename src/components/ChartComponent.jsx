@@ -23,6 +23,7 @@ const ChartComponent = () => {
 
   useEffect(() => {
     dispatch(fetchCoinTime({id,days}));
+    //console.log()
     dispatch(reset())
   }, [id,dispatch, reset, days]);
   return (
@@ -32,19 +33,25 @@ const ChartComponent = () => {
             name="currency"
             onChange={handleChange}
             value={id}>
-            {coins.map((coin)=>(
+            {coins?.map((coin)=>(
               <option key={coin.id} value={coin.id}>{coin.name}</option>
             ))}
           </select>)}
           
-          <button>
+          {/* <button>
             <select name="days" onChange={handleDays} value={days}>
               <option value="1">1</option>
               <option value="7">7</option>
               <option value="30">30</option>
             </select>
-          </button>
+          </button> */}
+          <button value="1" onClick={handleDays}>1D</button>
+          <button value="7" onClick={handleDays}>1W</button>
+          <button value="30" onClick={handleDays}>1M</button>
+          <button value="90" onClick={handleDays}>3M</button>
+          <button value="365" onClick={handleDays}>1Y</button>
         </button>
+        
     </div>
   )
 }

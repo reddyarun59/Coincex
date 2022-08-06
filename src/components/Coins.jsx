@@ -19,7 +19,7 @@ const Coins = () => {
       </div>
       {loading?<h1>Loading</h1>:(
         <div className="overflow-y-auto h-screen no-scrollbar">
-        {coins.map((coin)=>(
+        {coins?.map((coin)=>(
           <div key={coin.id} className="flex py-4 border-b-4 justify-between px-4">
             <div>
               <div className="flex"> 
