@@ -52,33 +52,38 @@ const ChartComponent = () => {
   }, [id,dispatch, days]);
 
   return (
-    <div className="bg-white rounded-md"> 
-        <button>
+    <div className="bg-white rounded-md p-4"> 
+
+      <div className="flex justify-between">
+        <div className="w-full flex justify-around">
+
+          <button value={1} onClick={handleDays} className="bg-slate-300 px-2 py-1 rounded-md">1D</button>
+          <button value={7} onClick={handleDays} className="bg-slate-300 px-2 py-1 rounded-md">1W</button>
+          <button value={30} onClick={handleDays} className="bg-slate-300 px-2 py-1 rounded-md">1M</button>
+          <button value={90} onClick={handleDays} className="bg-slate-300 px-2 py-1 rounded-md">3M</button>
+          <button value={365} onClick={handleDays} className="bg-slate-300 px-2 py-1 rounded-md">1Y</button>
+        </div>
+
+      <div>
           {loading?<h1>Loading</h1>:(<select 
             name="currency"
             onChange={handleChange}
-            value={id}>
+            value={id} className="bg-slate-100 w-20 h-8 text-center text-lg font-semibold rounded-md list-item">
             {coins?.map((coin)=>(
-              <option key={coin.id} value={coin.id}>{coin.name}</option>
+              <option id="blah" key={coin.id} value={coin.id} className="text-center text-lg">{coin.name}</option>
             ))}
           </select>)}
-          
-          {/* <button>
-            <select name="days" onChange={handleDays} value={days}>
-              <option value="1">1</option>
-              <option value="7">7</option>
-              <option value="30">30</option>
+        </div>
+        <div className="px-4">
+            <select className="bg-slate-100 h-8 text-center text-lg font-semibold rounded-md list-item">
+              <option>Line Chart</option>
+              <option>Bar Chart</option>
             </select>
-          </button> */}
-          <div className="flex justify-between">
-
-            <button value={1} onClick={handleDays}>1D</button>
-            <button value={7} onClick={handleDays}>1W</button>
-            <button value={30} onClick={handleDays}>1M</button>
-            <button value={90} onClick={handleDays}>3M</button>
-            <button value={365} onClick={handleDays}>1Y</button>
-          </div>
-        </button>
+        </div>
+      </div>
+          
+          
+  
         <div>
         <Line height="400"
               data={{

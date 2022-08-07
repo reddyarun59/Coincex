@@ -2,12 +2,12 @@ import React from 'react'
 
 const Exchange = () => {
   return (
-    <div className="bg-slate-50 my-6 pt-6 pb-6">
+    <div className="bg-white my-6 p-6 rounded-md">
       <div>
-        <h1>Exchange Coins</h1>
+        <h1 className="text-xl font-bold">Exchange Coins</h1>
       </div>
-      <div>
-        <div>
+      <div className="flex flex-col place-items-stretch">
+        <div className="flex justify-around">
           <h1>Sell</h1>
           <select>
             <option>Inr</option>
@@ -16,7 +16,7 @@ const Exchange = () => {
           </select>
           <input/>
         </div>
-        <div>
+        <div className="flex justify-around">
           <h1>Buy</h1>
           <select>
             <option>Inr</option>
@@ -25,7 +25,9 @@ const Exchange = () => {
           </select>
           <h2>2300</h2>
         </div>
-      <button>Exchange</button>
+        <div>
+          <button>Exchange</button>
+        </div>
       </div>
     </div>
   )

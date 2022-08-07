@@ -7,11 +7,13 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 const Portfolio = () => {
   return (
-    <div className="bg-slate-50 my-6 pt-6 pb-6">
-      <div>
-        <h3>Portfolio</h3>
-        <h4>Total Value</h4>
-        <span>$1000</span>
+    <div className="bg-white my-6 p-6 rounded-md">
+      <div className="flex justify-between">
+        <h1 className="text-xl font-bold">Portfolio</h1>
+        <div className="flex items-center">
+          <h4 className="text-sm font-light">Total Value</h4>
+          <span className="text-xl font-bold"> $1000</span>
+        </div>
       </div>
       <div className=""> 
         <Pie data={{
@@ -36,6 +38,7 @@ const Portfolio = () => {
 }} plugins={[ChartDataLabels]}  options={{maintainAspectRatio: false ,plugins: {
   legend: {
     display: true,
+    position:"right",
     labels: {
       usePointStyle: true,
       pointStyle: "circle"

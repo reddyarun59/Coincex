@@ -12,3 +12,13 @@
       scrollbar-width: none; /* Firefox */
     }
 }
+
+.hello{appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+
+/* For IE <= 11 */
+/* select::-ms-expand {
+   display: none; */
+/* } */
+}

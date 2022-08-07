@@ -24,11 +24,11 @@ const Navbar = () => {
     return ()=>{
       dispatch(reset())
     }
-  }, [ dispatch, currency]);
+  }, [dispatch, currency]);
 
 
   return (
-    <div>
+    <div className="flex justify-between pb-4">
         <div className="flex items-center">
           <label htmlFor="currency" className="sr-only">
             Currency
@@ -38,18 +38,15 @@ const Navbar = () => {
             name="currency"
             onChange={handleChange}
             value={currency}
-            className="focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-md"
+            className="bg-white w-20 h-8 text-center text-lg font-semibold rounded-md list-item"
           >
-            <option value="usd">USD</option>
+            <option value="usd" className="hover:bg-gray-100 hello"><li className="hover:bg-slate-500">USD</li></option>
             <option value="inr">INR</option>
             <option value="eur">EUR</option>
           </select>
         </div>
         <div className="flex">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            <input />
+            <input placeholder="Search By Coins" className="px-4 w-full rounded-md" />
         </div>
     </div>
   )
