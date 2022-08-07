@@ -1,7 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+//setting the tme stamps to local storage
 const coinTime=JSON.parse(localStorage.getItem("coinTime"))
+
+//initial state
 const initialState = {
     coinTime:coinTime?coinTime:null,
     isLoading: false,
@@ -10,8 +13,10 @@ const initialState = {
     message:""
 }
 
+//api for fetching history of particular coin at particular time
 const ChartApi = (id,days) => `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}`;
 
+//fetching the coin timings
 export const fetchCoinTime= createAsyncThunk("coinTime/fetchCoinTime", async( userData,thunkAPI)=>{
     
     try {

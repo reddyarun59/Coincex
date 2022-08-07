@@ -3,10 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoins, reset } from '../features/coins/coinSlice';
 
 const Navbar = () => {
-
-  
-  // const { currency, symbol } = CoinsState();
-
   const [currency, setCurrency]=useState("usd")
   const handleChange = (e) => {
     setCurrency(e.target.value)
@@ -14,13 +10,13 @@ const Navbar = () => {
 
   
   const dispatch=useDispatch()
+  //using the coins data from store
   const { coins, isLoading, isError, isSuccess, message }= useSelector((state)=>state.coins)
 
+  //dipatching to get various coins and their data
   useEffect(() => {
     dispatch(fetchCoins(currency));
     console.log(coins)
-
-    //dispatch(reset())
     return ()=>{
       dispatch(reset())
     }

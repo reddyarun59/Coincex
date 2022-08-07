@@ -22,7 +22,7 @@ const Coins = () => {
       {loading?<h1>Loading</h1>:(
         <div className="overflow-y-auto h-screen no-scrollbar">
         {coins?.map((coin)=>(
-          <div key={coin.id} className="flex py-4 border-b-4 justify-between px-4">
+          <div key={coin.id} className="flex py-4 border-b-2 border-slate-200 justify-between px-4">
             <div>
               <div className="flex"> 
                 <img src={coin.image} className="h-8 w-8 rounded-full mx-2"/>
@@ -32,7 +32,7 @@ const Coins = () => {
             </div>
         <h5 className="text-lg"><div className="flex">
           {coin.price_change_percentage_24h>0?<img src={up} className="w-6"/>:<img src={down} className="w-6"/>}
-          {Math.abs(coin.price_change_percentage_24h)}
+          {Math.abs(coin.price_change_percentage_24h)}%
           </div>
           </h5>
         </div>

@@ -1,17 +1,21 @@
-import { useSelector } from "react-redux";
-import ChartComponent from "./components/ChartComponent";
-import Coins from "./components/Coins";
-import Exchange from "./components/Exchange";
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import Portfolio from "./components/Portfolio";
+import React from 'react'
+import ChartComponent from './components/ChartComponent'
+import Coins from './components/Coins'
+import Exchange from './components/Exchange'
+import Header from './components/Header'
+import Navbar from './components/Navbar'
+import Portfolio from './components/Portfolio'
 
-function App() {
-  const { coins, isLoading, isError, isSuccess, message }= useSelector((state)=>state.coins)
-      return (
-        <div className="flex flex-col ">
-          <Header/>
-          <div className="grid grid-cols-7 gap-4 px-20 py-12 bg-blue-200">
+
+const App = () => {
+  //various components
+  return (
+    <div className="flex flex-col ">
+      <Header/>
+      <div className="bg-white">
+
+        <div className="grid grid-cols-7 gap-4 px-10 py-10 bg-violet-100 mx-20 my-10 rounded-lg">
+          
             <div className="col-span-5">
               <Navbar/>
               <ChartComponent/>
@@ -23,11 +27,11 @@ function App() {
             <div className="col-span-2">
               <Coins/>
             </div>
-          </div>
+          
         </div>
-      );
-    }
+      </div>
+    </div>
+  )
+}
 
-  
-
-export default App;
+export default App

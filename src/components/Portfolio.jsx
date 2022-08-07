@@ -16,6 +16,7 @@ const Portfolio = () => {
         </div>
       </div>
       <div className=""> 
+      {/* Pie Cart */}
         <Pie data={{
   labels: ['Tether', 'Luna', 'Ethereum'],
   datasets: [

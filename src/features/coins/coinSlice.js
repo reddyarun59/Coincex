@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import coinService from "./coinService";
 
+//gettings from local storage
 const coins=JSON.parse(localStorage.getItem("currency"))
 const initialState = {
     coins:coins?coins:null,
@@ -11,7 +12,7 @@ const initialState = {
 }
 
 
-
+//fetch data from api- various coin data
 export const fetchCoins= createAsyncThunk("coins/fetchCoins", async(currency, thunkAPI)=>{
     try {
         return await coinService.fetch(currency)

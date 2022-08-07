@@ -2,8 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 const Exchange = () => {
+  //getting the state from the central redux store
   const { coins, isLoading, isError, isSuccess, message }= useSelector((state)=>state.coins)
+
+  //setting the loading state
   const [loading, setLoading] = useState(true)
+
+  //changing the loading state 
   useEffect(() =>{
     setLoading(prevState=>!prevState)
   }, [coins, isLoading])
@@ -24,7 +29,7 @@ const Exchange = () => {
               <option id="blah" key={coin.id} value={coin.id} className="text-center text-lg">{coin.name}</option>
             ))}
           </select>)}
-          <h2>2300</h2>
+          <h3 className="text-orange-500">$2300</h3>
         </div>
         <div className="flex justify-around pt-4">
           <h4 className="text-green-600 font-semibold text-xl">Buy</h4>
@@ -37,7 +42,7 @@ const Exchange = () => {
               <option id="blah" key={coin.id} value={coin.id} className="text-center text-lg">{coin.name}</option>
             ))}
           </select>)}
-          <h2>2300</h2>
+          <h2 className="text-green-400">$2300</h2>
         </div>
         <div className="flex justify-center pt-8">
           <button className="bg-blue-600 py-2 px-3 rounded-md">Exchange</button>

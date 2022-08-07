@@ -30,20 +30,27 @@ const ChartComponent = () => {
   //const [coinChartData, setCoinChartData]=useState(coinTime)
   console.log(coinTime)
 
+  //setting the loading state
   const [loading, setLoading] = useState(true)
+  //changing the loading state
   useEffect(() =>{
     setLoading(prevState=>!prevState)
   }, [coins, isLoading])
+
   const [id, setId]=useState("bitcoin")
+
   const [days, setDays]=useState(30)
+
   const handleChange = (e) => {
     setId(e.target.value)
   }
+
+
   const handleDays = (e)=>{
     setDays(e.target.value)
   }
 
-
+  //dispatching the api to get coins data
   useEffect(() => {
     dispatch(fetchCoinTime({id,days}));
   return ()=>{
