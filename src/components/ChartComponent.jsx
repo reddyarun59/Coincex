@@ -50,19 +50,9 @@ const ChartComponent = () => {
       dispatch(reset())
     }
   }, [id,dispatch, days]);
-// let daysss
-//   // function switchStatement(data){
-//     switch(){
-//       case 365:
-//         daysss=["Jan", "Feb"]
-//         break;
-//       default:
-//         daysss=["jan", "Mar", "Apr", "May", "Jun", "Jul"]
-//     }
-//   // }
 
   return (
-    <div>
+    <div className="bg-white rounded-md"> 
         <button>
           {loading?<h1>Loading</h1>:(<select 
             name="currency"
@@ -89,7 +79,8 @@ const ChartComponent = () => {
             <button value={365} onClick={handleDays}>1Y</button>
           </div>
         </button>
-        <Line
+        <div>
+        <Line height="400"
               data={{
                 labels: coinTime.map((coin) => {
                   let date = new Date(coin[0]);
@@ -110,7 +101,7 @@ const ChartComponent = () => {
                   },
                 ],
               }}
-              options={{
+              options={{maintainAspectRatio: false ,
                 plugins: {
                   legend: {
                     display: false,
@@ -146,7 +137,7 @@ const ChartComponent = () => {
                     },}
                 }}}
             />
-        
+        </div>
     </div>
   )
 }

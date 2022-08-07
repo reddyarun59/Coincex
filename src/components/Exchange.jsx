@@ -2,7 +2,7 @@ import React from 'react'
 
 const Exchange = () => {
   return (
-    <div>
+    <div className="bg-slate-50 my-6 pt-6 pb-6">
       <div>
         <h1>Exchange Coins</h1>
       </div>

@@ -13,7 +13,7 @@ const Coins = () => {
 
   
   return (
-    <div className="bg-white">
+    <div className="bg-white px-4 py-4 rounded-md">
       <div className="py-4 px-4">
         <h2 className="text-xl font-bold">Cryptocurrency by market cap</h2>
       </div>

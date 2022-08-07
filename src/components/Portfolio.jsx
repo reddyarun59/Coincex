@@ -7,13 +7,13 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 const Portfolio = () => {
   return (
-    <div className="bg-slate-50">
+    <div className="bg-slate-50 my-6 pt-6 pb-6">
       <div>
         <h3>Portfolio</h3>
         <h4>Total Value</h4>
         <span>$1000</span>
       </div>
-      <div>
+      <div className=""> 
         <Pie data={{
   labels: ['Tether', 'Luna', 'Ethereum'],
   datasets: [
@@ -33,7 +33,7 @@ const Portfolio = () => {
       borderWidth: 1,
     },
   ],
-}} plugins={[ChartDataLabels]}  options={{plugins: {
+}} plugins={[ChartDataLabels]}  options={{maintainAspectRatio: false ,plugins: {
   legend: {
     display: true,
     labels: {
