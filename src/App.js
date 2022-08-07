@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import ChartComponent from "./components/ChartComponent";
 import Coins from "./components/Coins";
-import Counter from "./components/Counter";
 import Exchange from "./components/Exchange";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
