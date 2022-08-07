@@ -82,7 +82,7 @@ const ChartComponent = () => {
         <div>
         <Line height="400"
               data={{
-                labels: coinTime.map((coin) => {
+                labels: coinTime?.map((coin) => {
                   let date = new Date(coin[0]);
                   let time =
                     date.getHours() > 12
@@ -93,7 +93,7 @@ const ChartComponent = () => {
 
                 datasets: [
                   {
-                    data: coinTime.map((coin) => coin[1]),
+                    data: coinTime?.map((coin) => coin[1]),
                     pointRadius: 0,
                     label: `${id.toUpperCase()}
                     Market Price`,
