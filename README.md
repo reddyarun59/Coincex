@@ -1,6 +1,6 @@
 # Coincex
 
-CoinCex is a Crypto Currency Dashboard.
+**CoinCex** is a Crypto Currency Dashboard.
 
 ## Getting Started
 
@@ -30,32 +30,36 @@ npm start
 
 CoinCex is a Crypto Currency Dashboard. 
       Users can watch current coin prices of top 100 coins, access their portfolio, buy and sell coins and visualize coin history by charts. 
-Technologies used
-    • ReactJS 
-    • Redux Toolkit 
-    • Tailwind CSS
-    • React-ChartJS-2
-    • Axios
-    • Coin-GeckoApi for API’s 
-Copmonents
-Header Component
-    • Its a simple header with Logo and Name of the App.  
       
-Coins Component
-    • Users can watch and scroll through top 100 coins by Market Cap.
-    • Users can see the price deflection of a particular coin from past 24 hours in various native currencies 
-Chart Component
-    • User can see the price history of a particular coin against time from 1 day to throughout 1 year 
-    • Implemented the Line Chart for current app(Beta version) 
-Navbar Component
-    • User can toggle between Native currencies and check the market cap and price in native currency
-    • Added Search input to find Coins
+Technologies used:
+- ReactJS
+- Redux Toolkit
+- Tailwind CSS
+- React-ChartJS-2
+- Axios
+- Coin-GeckoApi for API’s 
 
-Exchange Component
-    • Users can Buy and Sell Various coins through native currency. 
+## Copmonents
+
+### Header Component
+- Its a simple header with Logo and Name of the App.  
       
-Portfolio Component
-    • Users can Access their Portfolio
-    • Implemented the Pie Chart to visualize the current portfolio size and breakdown of coins which they are owning
+### Coins Component
+- Users can watch and scroll through top 100 coins by Market Cap.
+- Users can see the price deflection of a particular coin from past 24 hours in various native currencies 
+
+### Chart Component
+- User can see the price history of a particular coin against time from 1 day to throughout 1 year 
+- Implemented the Line Chart for current app(Beta version) 
+### Navbar Component
+- User can toggle between Native currencies and check the market cap and price in native currency
+- Added Search input to find Coins
+
+### Exchange Component
+- Users can Buy and Sell Various coins through native currency. 
+      
+### Portfolio Component
+- Users can Access their Portfolio
+- Implemented the Pie Chart to visualize the current portfolio size and breakdown of coins which they are owning
 
 
