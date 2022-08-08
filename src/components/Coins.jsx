@@ -20,7 +20,7 @@ const Coins = () => {
         <h2 className="text-xl font-bold">Cryptocurrency by market cap</h2>
       </div>
       {loading?<h1>Loading</h1>:(
-        <div className="overflow-y-auto h-screen no-scrollbar">
+        <div className="overflow-y-auto max-h-screen no-scrollbar">
         {coins?.map((coin)=>(
           <div key={coin.id} className="flex py-4 border-b-2 border-slate-200 justify-between px-4">
             <div>
