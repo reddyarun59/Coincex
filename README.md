@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Coincex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CoinCex is a Crypto Currency Dashboard.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+Clone the repository on your local machine with the command below in your terminal, and cd into the CoinCex
 
-### `npm start`
+```bash
+https://github.com/reddyarun59/CoinCex.git
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+cd Coincex
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Install dependencies (if you are using yarn then do with that)
 
-### `npm test`
+```bash
+npm install
+```
+Start the server
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm start
+```
 
-### `npm run build`
+## Live Link
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[CoinCex](https://coincex.herokuapp.com)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+CoinCex is a Crypto Currency Dashboard. 
+      Users can watch current coin prices of top 100 coins, access their portfolio, buy and sell coins and visualize coin history by charts. 
+Technologies used
+    • ReactJS 
+    • Redux Toolkit 
+    • Tailwind CSS
+    • React-ChartJS-2
+    • Axios
+    • Coin-GeckoApi for API’s 
+Copmonents
+Header Component
+    • Its a simple header with Logo and Name of the App.  
+      
+Coins Component
+    • Users can watch and scroll through top 100 coins by Market Cap.
+    • Users can see the price deflection of a particular coin from past 24 hours in various native currencies 
+Chart Component
+    • User can see the price history of a particular coin against time from 1 day to throughout 1 year 
+    • Implemented the Line Chart for current app(Beta version) 
+Navbar Component
+    • User can toggle between Native currencies and check the market cap and price in native currency
+    • Added Search input to find Coins
 
-### `npm run eject`
+Exchange Component
+    • Users can Buy and Sell Various coins through native currency. 
+      
+Portfolio Component
+    • Users can Access their Portfolio
+    • Implemented the Pie Chart to visualize the current portfolio size and breakdown of coins which they are owning
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
