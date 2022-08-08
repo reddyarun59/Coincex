@@ -7,7 +7,7 @@ CoinCex is a Crypto Currency Dashboard.
 Clone the repository on your local machine with the command below in your terminal, and cd into the CoinCex
 
 ```bash
-https://github.com/reddyarun59/coincex.git
+https://github.com/reddyarun59/Coincex.git
 
 cd Coincex
 ```
