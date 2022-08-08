@@ -8,10 +8,7 @@ const Header = () => {
           <div className="flex justify-between items-center">
             <div className="flex items-center">
                 <Logo/>
-                <h1 className="text-2xl font-bold">CoinCex</h1>
-            </div>
-            <div className="pr-8">
-              <button>Login</button>
+                <h1 className="text-2xl font-bold">AlmaBetter</h1>
             </div>
           </div>
         </div>

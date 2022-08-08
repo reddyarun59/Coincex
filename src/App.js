@@ -24,7 +24,7 @@ const App = () => {
                 <Exchange/>
               </div>
             </div>
-            <div className="col-span-2">
+            <div className="col-span-2 max-h-screen">
               <Coins/>
             </div>
           
